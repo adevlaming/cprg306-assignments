@@ -34,11 +34,14 @@ export default function MealIdeas({ingredient}) {
 
     return(
         <div className="mx-20, my-10 p-5 text-red-200">
-            <h3 className="text-lg">Meal Ideas for "{ingredient}"</h3>
+            <h2 className="text-2xl pb-5">Meal Ideas for "{ingredient}"</h2>
+            {meals.length === 0 ? (
+                <p>No meal ideas found for "{ingredient}".</p>
+            ) : (
             <ul>
             {meals.map(meal => (
                 <li>  
-                <img className="max-h-60 border-2 border-cyan-900" src={meal.strMealThumb} alt={meal.strMeal} />
+                <img className="max-h-60 border-2 border-yellow-500" src={meal.strMealThumb} alt={meal.strMeal} />
                     <ul className="pb-5">
                         <li><b>Meal ID:</b> {meal.idMeal}</li>
                         <li><b>Name:</b> {meal.strMeal}</li>
@@ -46,7 +49,10 @@ export default function MealIdeas({ingredient}) {
                 </li>
             ))}
             </ul>
+            )}
         </div>
     );
 
 }
+
+//bg-slate-800 border border-yellow-500
