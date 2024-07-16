@@ -43,7 +43,7 @@ export default function Page(){
                     </div>
                     <ItemList items={itemList} onItemSelect={handleItemSelect} />
                 </div>
-                <div className="flex-0.5 ml-10 pt-48">
+                <div className="flex-1 ml-10 pt-48">
                     {selectedItemName && <MealIdeas ingredient={selectedItemName} /> }
                 </div>
             </div>
